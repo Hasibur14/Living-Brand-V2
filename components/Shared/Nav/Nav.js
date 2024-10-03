@@ -1,16 +1,15 @@
 "use client";
-import { RiArrowDropDownLine } from "react-icons/ri";
-import { IoMenu } from "react-icons/io5";
-import { ImCancelCircle } from "react-icons/im";
-import React, { useState } from "react";
-import "./Nav.css";
-import Link from "next/link";
-import Image from "next/image";
+import ButtonEffect from "@/app/button/page";
 import WordRotate from "@/components/magicui/word-rotate";
 import logo from "@/public/assets/logo/logo.png";
-import Button from "@/components/Custom/Button";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
+import { ImCancelCircle } from "react-icons/im";
+import { IoMenu } from "react-icons/io5";
 import { MdOutlineArrowRightAlt } from "react-icons/md";
-import ButtonEffect from "@/app/button/page";
+import { RiArrowDropDownLine } from "react-icons/ri";
+import "./Nav.css";
 
 const Nav = () => {
   // State declarations
@@ -473,22 +472,22 @@ const Nav = () => {
                   Achievements
                 </Link>
               </h2>
+
               <h2
-                onClick={() => handleNavigations("/tech-solutions")}
+                onClick={() => handleNavigations("/meet-our-team")}
                 className={`${
-                  innerActive == "/tech-solutions"
-                    ? "actives"
-                    : "text-[#115c5c]"
+                  innerActive == "/meet-our-team" ? "actives" : "text-[#115c5c]"
                 } mb-4`}
               >
                 <Link
-                  href={"tech-solutions"}
+                  href={"/meet-our-team"}
                   className="text-2xl lg:text-3xl font-bold  "
                   onClick={() => setIsHoveredAbout(false)}
                 >
-                  Meet The Team
+                  Meet out Team
                 </Link>
               </h2>
+              
             </div>
             {/* <div className="flex gap-5">
               <Link href={"/awards"}>
