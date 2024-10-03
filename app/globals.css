@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  scrollbar-width: none;
+}
+
+::selection {
+  background-color: #125b5c;
+  color: white;
+}
+
+body {
+  cursor: url(../public/assets/cursor/cursor.png), auto;
+}
+
+Link,
+video {
+  cursor: pointer;
+}
