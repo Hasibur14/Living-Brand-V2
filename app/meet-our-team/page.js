@@ -5,7 +5,7 @@ const page = () => {
         <div className="mx-4 lg:mx-72">
             <div className="flex justify-center mt-20 mb-24 md:mb-44">
                 <h2 className="text-2xl  md:text-5xl font-bold">
-                    Out Team
+                Our Team
                 </h2>
 
             </div>

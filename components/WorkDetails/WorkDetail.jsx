@@ -1,25 +1,24 @@
-import React from "react";
 
 const WorkDetail = () => {
   return (
-    <div className="flex flex-col px-4 lg:px-[100px]  font-[Inter]">
+    <div className="flex flex-col px-5 lg:px-[100px]  font-[Inter]">
       <div className="w-full flex flex-col gap-3 text-[#125b5c]  justify-start mt-16">
         <p className="text-[19px]">Casestudy</p>
-        <h1 className="font-bold text-5xl ">
+        <h1 className="font-bold text-2xl lg:text-5xl ">
           Pusti Chinigura Rice X Nusrat Faria I Eid Campaign I Living Brands
         </h1>
       </div>
-      <div className="mt-20 mb-20 min-h-screen">
+      <div className="mt-20 mb-20 lg:min-h-screen">
         <img
           className="h-full w-full rounded-3xl rounded-tr-3xl "
           src="https://i.postimg.cc/K88zzWnM/1.jpg"
         />
       </div>
 
-      <div className="flex justify-between mb-20">
+      <div className="lg:flex justify-between mb-20">
         <div className=" w-[30%] flex flex-col gap-10">
           <div className="flex flex-col gap-4">
-            <h1 className="font-bold text-3xl text-[#125b5c]">Services</h1>
+            <h1 className="font-bold text-2xl md:text-3xl text-[#125b5c]">Services</h1>
             <ul className="list-none space-y-4 text-[16px]">
               <li className="cursor-pointer">Film & Video</li>
               <li className="cursor-pointer">
@@ -32,8 +31,8 @@ const WorkDetail = () => {
           </div>
         </div>
 
-        <div className=" w-[70%]">
-          <small className="text-[16px] leading-snug">
+        <div className="lg:w-[70%] text-justify  ">
+          <small className="text-[16px] leading-snug ">
             Pusti Chigura Rice brings you something truly special! We&apos;re
             thrilled to present our latest campaign featuring the glamorous
             Nusrat Faria, who&apos;s here to make your Eid celebrations even
@@ -49,7 +48,7 @@ const WorkDetail = () => {
         </div>
       </div>
 
-      <div className="mb-20 video-container w-full h-screen">
+      <div className="mb-20 video-container w-full h-60 md:h-screen">
         <iframe
           width="100%"
           height="100%"
