@@ -1,4 +1,3 @@
-import React from "react";
 import ContactUsLayout from "./ContactUsLayout";
 
 const ContactUs = () => {

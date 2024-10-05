@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Items = () => {
   const [hoveredId, setHoveredId] = useState(null); // To track the hovered card
@@ -392,7 +392,7 @@ const Items = () => {
         <Link key={item.id} href="/work-details">
           <div
             className="relative"
-            onMouseMove={(e) => handleMouseMove(e, item.id)} // Pass card's id
+            onMouseMove={(e) => handleMouseMove(e, item.id)} 
             onMouseLeave={handleMouseLeave}
           >
             <Image

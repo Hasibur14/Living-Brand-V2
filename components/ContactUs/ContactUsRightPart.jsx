@@ -1,155 +1,89 @@
-import React from "react";
 
-const ContactUsRightPart = () => {
+const InputField = ({ label, type = "text", name }) => {
   return (
-    <div className=" mb-16">
+    <label>
+      <p className="text-lg md:text-xl mt-12 mb-8">{label}</p>
+      <input
+        type={type}
+        name={name}
+        className="w-full border-b border-black focus:outline-none h-10 text-xl"
+      />
+    </label>
+  );
+};
+
+// Reusable Button Component
+const ServiceButton = ({ label }) => {
+  return (
+    <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
+      {label}
+    </button>
+  );
+};
+
+// Contact Us Component
+const ContactUsRightPart = () => {
+  const services = [
+    'Branding', 'Social Media Management', 'Content Creation & Marketing',
+    'Ad Film/Video Production', 'SEO', 'Website Transformation', 
+    'Mobile App Development & UI/UX', 'CRM/Sales Pipeline Development', 
+    'Influencer Marketing', 'IP Creation', 'Email & SMS Marketing Automation', 
+    'Integrated Campaigns', 'Performance Media', 'Growth via Media Buying', 
+    'Social Listening & ORM', 'Consumer & Market Research', 'Others'
+  ];
+
+  const referralSources = [
+    'Referral', 'Media & News', 'LinkedIn', 
+    'Instagram/Facebook', 'Emails/Newsletter', 'Search', 'Other Sources'
+  ];
+
+  return (
+    <div className="mb-16">
+      {/* Section Heading */}
       <div>
         <p className="text-base my-2 text-[#125b5c]">GOT AN IDEA?</p>
-        <h1 className="text-3xl font-bold my-2 text-[#125b5c]">
+        <h1 className="text-2xl md:text-3xl font-bold my-2 text-[#125b5c]">
           Drop us a message
         </h1>
         <p className="text-base my-2">
-          We&apos;re excited to work with you soon! Please drop an email with
-          your details & requirements to bd@living-brand.com.
+          We are excited to work with you soon! Please drop an email with your details & requirements to <a href="mailto:bd@living-brand.com" className="underline">bd@living-brand.com</a>.
         </p>
         <p className="text-base my-2">
           You can also fill this form & we&apos;ll get back in 2 business days.
         </p>
       </div>
+
+      {/* Input Fields */}
       <div>
-        <label>
-          <p className="text-xl mt-12 mb-8">Your Name</p>
-          <span className="mb-1 "></span>
-          <input
-            type="text"
-            className=" w-full border-b border-black focus:outline-none h-10 text-Xl"
-          />
-        </label>
-        <label>
-          <p className="text-xl mt-12 mb-8">Your Organization&apos;s Name</p>
-          <span className="mb-1"></span>
-          <input
-            type="text"
-            className=" w-full border-b border-black focus:outline-none h-10 text-Xl"
-          />
-        </label>
-        <label>
-          <p className="text-xl mt-12 mb-8">Your Email</p>
-          <span className="mb-1"></span>
-          <input
-            type="text"
-            className=" w-full border-b border-black focus:outline-none h-10 text-Xl"
-          />
-        </label>
-        <label>
-          <p className="text-xl mt-12 mb-8">Your Number</p>
-          <span className="mb-1"></span>
-          <input
-            type="text"
-            className=" w-full border-b border-black focus:outline-none h-10 text-Xl "
-          />
-        </label>
-        <label>
-          <p className="text-xl mt-12 mb-8">Website/Social Media Link</p>
-          <span className="mb-1"></span>
-          <input
-            type="text"
-            className=" w-full border-b border-black focus:outline-none h-10 text-Xl"
-          />
-        </label>
-        <p className="text-xl mt-12 mb-8">
-          Which services are you interested in?
-        </p>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Branding
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Social Media Management
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Content Creation & Marketing
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Ad Film/Video Production{" "}
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          SEO
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Website Transformation{" "}
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Mobile App Development & UI/UX
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          CRM/Sales Pipeline Development{" "}
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Influencer Marketing{" "}
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          IP Creation
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Email & SMS Marketing Automation
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Integrated Campaigns
-        </button>
+       <div>
+       <InputField label="Your Name" name="name" />
+        <InputField label="Your Organization's Name" name="organization" />
+        <InputField label="Your Email" type="email" name="email" />
+        <InputField label="Your Number" type="tel" name="number" />
+        <InputField label="Website/Social Media Link" name="website" />
+       </div>
 
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Performance Media
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Growth via Media Buying
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Social Listening & ORM
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Consumer & Market Research
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Integrated Campaigns
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Others
-        </button>
+        {/* Services Section */}
+        <p className="text-xl mt-12 mb-8">Which services are you interested in?</p>
+        <div className="grid grid-cols-2 md:flex md:flex-wrap">
+          {services.map((service, index) => (
+            <ServiceButton key={index} label={service} />
+          ))}
+        </div>
 
-        <label>
-          <p className="text-xl mt-12">What&apos;s on your mind? </p>
-          <span className="mb-1"></span>
-          <input
-            type="text"
-            className=" w-full border-b border-black focus:outline-none h-10 text-Xl"
-          />
-        </label>
-        <p className="text-xl mt-12">How did you hear about us?</p>
+        {/* Text Area for Message */}
+        <InputField label="What's on your mind?" name="message" />
 
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Referral
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Media & News
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          LinkedIn
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Instagram/Facebook
-        </button>
+        {/* Referral Sources */}
+        <p className="text-xl mt-12 mb-8">How did you hear about us?</p>
+        <div className="grid grid-cols-2 md:flex md:flex-wrap">
+          {referralSources.map((source, index) => (
+            <ServiceButton key={index} label={source} />
+          ))}
+        </div>
 
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Emails/Newsletter
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Search
-        </button>
-        <button className="p-2 border rounded-full m-2 focus:outline-none focus:ring-0 focus:bg-[#B6B6B6]">
-          Other Sources
-        </button>
-        <br />
-        <button className="border py-2 px-24 rounded-full   hover:cursor-pointer   text-xl hover:bg-white hover:text-black border-black text-white  bg-[#125b5c] mt-5">
+        {/* Submit Button */}
+        <button className="border py-2 px-20 md:px-24 rounded-full hover:cursor-pointer text-xl hover:bg-white hover:text-black border-black text-white bg-[#125b5c] mt-5">
           Submit
         </button>
       </div>
